@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --inner-gap: 0.3rem;
+        }
+        .container {
+            display:grid;
+            grid-template-columns: 3rem repeat(52, 2rem);
+            grid-template-rows: 3rem repeat(auto-fit, 1fr);
+            gap: 1rem;
+        }
+        .box {
+            /* outline:0.1rem solid red; */
+            outline-offset: 0.1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        .calendar {
+            --month-span: 1;
+            grid-column: 2 / 54;
+            display:grid;
+            grid-template-columns: repeat(52, 1fr);
+            grid-template-rows: 1fr 1fr;
+            gap: var(--inner-gap);
+            padding: var(--inner-gap);
+            & > div {
+                background: white;
+                min-width: 2ch;
+            }
+            & > .month {
+                grid-column: span var(--month-span);
+                border:0.1rem solid orange;
+            }
+        }
+        .weeknum {
+            grid-row: 2;
+            border:0.1rem solid pink;
+        }
+        .grade {
+            grid-column: span 52;
+            display: grid;
+            grid-template-columns: repeat(52, 1fr);
+            grid-template-rows: repeat(auto-fit, 1fr);
+            gap: var(--inner-gap);
+            & > div {
+                --row: 1;
+                --col: 1;
+                --span-row: 1;
+                --span-col: 1;
+                grid-column: var(--col) / span var(--span-col);
+                grid-row: var(--row) / span var(--span-row);
+                outline: 0.1rem solid black;
+                border-radius: 0.1rem;
+                background: lightgoldenrodyellow;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            & > .vacation {
+                background: hsl(0, 0%, 0%, 0.1);
+            }
+            & > .test {
+                background: gold;
+            }
+            & > .blue {
+                background: skyblue;
+            }
+            & > .green {
+                background: palegreen;
+            }
+            & > .slate {
+                background: lightslategray;
+            }
+            & > .red {
+                background: lightcoral;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">구분</div>
+        <div class="box calendar">
+            <div class="month" style="--month-span:2">1월</div>
+            <div class="month" style="--month-span:4">2월</div>
+            <div class="month" style="--month-span:5">3월</div>
+            <div class="month" style="--month-span:4">4월</div>
+            <div class="month" style="--month-span:5">5월</div>
+            <div class="month" style="--month-span:4">6월</div>
+            <div class="month" style="--month-span:4">7월</div>
+            <div class="month" style="--month-span:5">8월</div>
+            <div class="month" style="--month-span:4">9월</div>
+            <div class="month" style="--month-span:4">10월</div>
+            <div class="month" style="--month-span:4">11월</div>
+            <div class="month" style="--month-span:5">12월</div>
+            <div class="month" style="--month-span:2">1월</div>
+            <div class="weeknum">3</div>
+            <div class="weeknum">4</div>
+            <div class="weeknum">5</div>
+            <div class="weeknum">6</div>
+            <div class="weeknum">7</div>
+            <div class="weeknum">8</div>
+            <div class="weeknum">9</div>
+            <div class="weeknum">10</div>
+            <div class="weeknum">11</div>
+            <div class="weeknum">12</div>
+            <div class="weeknum">13</div>
+            <div class="weeknum">14</div>
+            <div class="weeknum">15</div>
+            <div class="weeknum">16</div>
+            <div class="weeknum">17</div>
+            <div class="weeknum">18</div>
+            <div class="weeknum">19</div>
+            <div class="weeknum">20</div>
+            <div class="weeknum">21</div>
+            <div class="weeknum">22</div>
+            <div class="weeknum">23</div>
+            <div class="weeknum">24</div>
+            <div class="weeknum">25</div>
+            <div class="weeknum">26</div>
+            <div class="weeknum">27</div>
+            <div class="weeknum">28</div>
+            <div class="weeknum">29</div>
+            <div class="weeknum">30</div>
+            <div class="weeknum">31</div>
+            <div class="weeknum">32</div>
+            <div class="weeknum">33</div>
+            <div class="weeknum">34</div>
+            <div class="weeknum">35</div>
+            <div class="weeknum">36</div>
+            <div class="weeknum">37</div>
+            <div class="weeknum">38</div>
+            <div class="weeknum">39</div>
+            <div class="weeknum">40</div>
+            <div class="weeknum">41</div>
+            <div class="weeknum">42</div>
+            <div class="weeknum">43</div>
+            <div class="weeknum">44</div>
+            <div class="weeknum">45</div>
+            <div class="weeknum">46</div>
+            <div class="weeknum">47</div>
+            <div class="weeknum">48</div>
+            <div class="weeknum">49</div>
+            <div class="weeknum">50</div>
+            <div class="weeknum">51</div>
+            <div class="weeknum">52</div>
+            <div class="weeknum">1</div>
+            <div class="weeknum">2</div>
+        </div>
+        <div class="box">의예1</div>
+        <div class="box grade">
+            <div style="--span-col: 6; --span-row: 3;"></div>
+            <div style="--col: 7; --span-col: 6;">생명과학 I, 자연과학개론 I</div>
+            <div style="--col: 13; --span-col: 3;">기초의학 실습 I</div>
+            <div style="--col: 16; --span-col: 7;">생명과학 I, 자연과학개론 I</div>
+            <div style="--col: 33; --span-col: 6;">세포와 대사 I</div>
+            <div style="--col: 39; --span-col: 3;">기초의학 실습 II</div>
+            <div style="--col: 42; --span-col: 7;">세포와 대사 II</div>
+            <div style="--col: 23; --span-col: 10;--span-row: 3;" class="vacation">여름방학</div>
+            <div style="--col: 49; --span-col: 4; --span-row: 3;" class="vacation">겨울방학</div>
+            <div style="--row: 2; --col: 7; --span-col: 16;" class="blue">의학용어와 근거중심 의학입문, 의료정보학</div>
+            <div style="--row: 3; --col: 7; --span-col: 16;" class="green">HSP1-1, 기독교입문, 독서토론</div>
+            <div style="--row: 2; --col: 33; --span-col: 16;" class="blue">의학통계</div>
+            <div style="--row: 3; --col: 33; --span-col: 16;" class="green">HSP1-2, 성서와 의학, 환경 의학, 교양선택</div>
+        </div>
+        <div class="box">의예2</div>
+        <div class="box grade">
+            <div style="--span-col: 5; --span-row: 5;" class="vacation">겨울방학</div>
+            <div style="--col: 6;--span-col: 7;">세포와 대사 III</div>
+            <div style="--col: 13;--span-col: 7;">세포와 대사 IV</div>
+            <div style="--col: 20;--span-col: 3;">기초의학 실습 III</div>
+            <div style="--row: 2;--col: 6;--span-col: 7;">인체 발생학</div>
+            <div style="--row: 2;--col: 13;--span-col: 10;">인체의 구조와 기능: 입문</div>
+            <div style="--row: 3;--col: 6;--span-col: 17;">의과학연구기법 II</div>
+            <div style="--row: 4;--col: 6;--span-col: 17;" class="blue">과학적 글쓰기, 문헌검색</div>
+            <div style="--row: 5;--col: 6;--span-col: 17;" class="green">HSP 2-1, 의료선교학, 교양선택</div>
+            <div style="--col: 23;--span-col: 10; --span-row: 5;" class="vacation">여름방학</div>
+            <div style="--col: 33;--span-col: 17;">인체의 구조와 기능</div>
+            <div style="--row:2;--col: 33;--span-col: 4;--span-row:3;">인체의 구조와 기능(I) 근골격/피부</div>
+            <div style="--row:2;--col: 37;--span-col: 5;--span-row:3;">인체의 구조와 기능(II) 순환/호흡기</div>
+            <div style="--row:2;--col: 42;--span-col: 5;--span-row:3;">인체의 구조와 기능(III) 소화기/신장/비뇨기/내분비</div>
+            <div style="--row:2;--col: 47;--span-col: 3;--span-row:3;">인체의 구조와 기능(IV) 신경계</div>
+            <div style="--row:5;--col: 33;--span-col: 17;" class="green">HSP 2-2</div>
+            <div style="--col: 50; --span-col: 3; --span-row: 5;" class="vacation">겨울방학</div>
+        </div>
+        <div class="box">의학1</div>
+        <div class="box grade">
+            <div style="--span-col: 5; --span-row: 4;" class="vacation">겨울방학</div>
+            <div style="--col:6; --span-col:8; --span-row: 3;">인체 감염과 면역반응</div>
+            <div style="--col:14; --span-col:8; --span-row: 3;">질병의 발생 기전과 약물치료 (I), (II)</div>
+            <div style="--col:22; --span-col:2; --span-row: 3;">임상 추론(I)</div>
+            <div style="--row: 4;--col:6; --span-col:18;" class="green">의료커뮤니케이션 총론</div>
+            <div style="--col: 24;--span-col: 7; --span-row: 4;" class="vacation">여름방학</div>
+            <div style="--col: 31;">임상의학</div>
+            <div style="--col: 32;--span-col:2">근골격계학</div>
+            <div style="--col: 34;--span-col:2">류마티스·알러지학</div>
+            <div style="--col: 36;--span-col:8">신장요로계-내분비학</div>
+            <div style="--col: 44;--span-col:2">종양학</div>
+            <div style="--col: 46;--span-col:2">혈액학</div>
+            <div style="--col: 48;--span-col:2">가족성장노화</div>
+            <div style="--row:2;--col: 31;--span-col:19;" class="slate">ICM (Introduction of Clinical Medicine) I</div>
+            <div style="--row:3;--col: 31;--span-col:19;" class="blue">의학통계</div>
+            <div style="--row:4;--col: 31;--span-col:19;" class="green">의료커뮤니케이션 I</div>
+            <div style="--col: 50; --span-col: 3; --span-row: 4;" class="vacation">겨울방학</div>
+        </div>
+        <div class="box">의학2</div>
+        <div class="box grade">
+            <div style="--span-col: 5; --span-row: 3;" class="vacation">겨울방학</div>
+            <div style="--col:6; --span-col: 4;">호흡기학</div>
+            <div style="--col:10; --span-col: 4;">심장학</div>
+            <div style="--col:14; --span-col: 5;">신경과학</div>
+            <div style="--col:19; --span-col: 2;">PBL II</div>
+            <div style="--col:21; --span-col: 3;">건강증진과 질병예방</div>
+            <div style="--col:24;">임상의학</div>
+            <div style="--row:2; --col:6; --span-col: 19;" class="slate">ICM (Introduction of Clinical Medicine) II</div>
+            <div style="--row:3; --col:6; --span-col: 19;" class="green">의료커뮤니케이션 II, 의학윤리 : 환자안전</div>
+            <div style="--col: 25;--span-col: 6; --span-row: 3;" class="vacation">여름방학</div>
+            <div style="--col: 31; --span-col: 2;">소화기학 (I)</div>
+            <div style="--col: 33; --span-col: 2;">소화기학 (II)</div>
+            <div style="--col: 35; --span-col: 4;">피부 감각기학</div>
+            <div style="--col: 39; --span-col: 3;">행동과학과 정신의학</div>
+            <div style="--col: 42; --span-col: 3;">여성의학 및 생식의학</div>
+            <div style="--col: 45; --span-col: 3;">감염학</div>
+            <div style="--col: 48; --span-col: 2;">PBL III</div>
+            <div style="--row: 2; --col: 31; --span-col:19;" class="slate">ICM (Introduction of Clinical Medicine) III</div>
+            <div style="--row: 3; --col: 31; --span-col:19;" class="green">의료커뮤니케이션 III</div>
+            <div style="--col: 50; --span-col: 3; --span-row: 3;" class="vacation">겨울방학</div>
+        </div>
+        <div class="box">의학3</div>
+        <div class="box grade">
+            <div style="--span-col: 4; --span-row: 2;" class="slate">ICM IV 임상실습 오리엔테이션</div>
+            <div style="--col: 5; --span-col: 21;">필수 임상실습 :  내과, 외과, 소아과, 산부인과, 정신과, 신경과, 응급의학과, 임상수기실습</div>
+            <div style="--row: 2; --col: 5; --span-col: 21;" class="green">의료선교와 국제협력, 보건의료법규, 법의학</div>
+            <div style="--col: 26;--span-col: 4; --span-row: 2;" class="vacation">여름방학</div>
+            <div style="--col: 30;--span-col: 8;">필수 임상실습 :  내과, 외과, 소아과, 산부인과, 정신과, 신경과, 응급의학과, 임상수기실습</div>
+            <div style="--row: 2; --col: 30;--span-col: 8;" class="green">의료윤리, 의료프로페셔널리즘</div>
+            <div style="--col: 38;--span-col: 4; --span-row: 2;" class="red">특성화실습(해외교환실습, 선택심화실습, 자유선택실습)</div>
+            <div style="--col: 42; --span-col:8;">필수 임상실습 :  내과, 외과, 소아과, 산부인과, 정신과, 신경과, 응급의학과, 임상수기실습</div>
+            <div style="--row: 2; --col: 42; --span-col:8;" class="green">의료윤리, 의료프로페셔널리즘</div>
+            <div style="--col: 50; --span-col: 3; --span-row: 2;" class="vacation">겨울방학</div>
+        </div>
+        <div class="box">의학4</div>
+        <div class="box grade">
+            <div style="--span-col: 4; --span-row: 3;" class="red">학생인턴과정(서브인턴십)</div>
+            <div style="--col: 5; --span-col:22">필수 임상 실습 : 가정의학과, 정형외과, 신경외과, 성형외과, 흉부외과, 이비인후과, 안과, 피부과, 비뇨기과, 재활의학과, 영상의학과, 마취통증의학과, 진단검사의학과,  병리학과, 치료방사선학과, 핵의학과, 직업환경의학과, 사회봉사</div>
+            <div style="--col: 5; --span-col:22; --row: 2;">임상추론</div>
+            <div style="--col: 5; --span-col:22; --row: 3;" class="green">호스피스 완화의학, 의료 윤리 세미나</div>
+            <div style="--col: 27; --span-col:2; --span-row: 3;">임상술기 실습 및 재교육</div>
+            <div style="--col: 29; --span-col:4; --span-row: 3;" class="vacation">여름방학</div>
+            <div style="--col: 33; --span-col:14; --span-row: 2;">임상술기◦진료 역량</div>
+            <div style="--col: 36; --span-col:11; --row: 3;" class="test">의사국가시험 (실기)</div>
+            <div style="--col: 47; --span-col:4; --span-row: 3;">자율학습</div>
+            <div style="--col: 51; --span-col:1; --span-row: 3;" class="test">의사국가시험 (필기)</div>
+        </div>
+    </div>
+</body>
+</html>
